@@ -1,3 +1,4 @@
+import 'package:do_you_want_to_learn_flutter/widgets.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -39,7 +40,10 @@ class _HomePageState extends State<HomePage> {
                 minimumSize: MaterialStateProperty.all(Size(double.infinity, 44))
               ),
               onPressed: () {
-                print('button pressed');
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (_) => WidgetsPage())
+                );
               }, 
               child: Text('Yes')
             )
