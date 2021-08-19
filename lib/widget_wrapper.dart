@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'widget_element.dart';
 import 'widgets/widget_text.dart';
 import 'widgets/widget_button.dart';
+import 'widgets/widget_row.dart';
 
 class WidgetWrapper extends StatelessWidget {
   WidgetWrapper({Key? key, required this.title, required this.element}) : super(key: key);
@@ -24,6 +25,8 @@ class WidgetWrapper extends StatelessWidget {
         return WidgetText();
       case WidgetElement.button:
         return WidgetButton();
+      case WidgetElement.row:
+        return WidgetRow();
       default:
         return Text('Coming soon...');
     }
