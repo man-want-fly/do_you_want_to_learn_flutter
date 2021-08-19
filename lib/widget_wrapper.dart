@@ -4,6 +4,7 @@ import 'widget_element.dart';
 import 'widgets/widget_text.dart';
 import 'widgets/widget_button.dart';
 import 'widgets/widget_row.dart';
+import 'widgets/widget_infinity_list.dart';
 
 class WidgetWrapper extends StatelessWidget {
   WidgetWrapper({Key? key, required this.title, required this.element}) : super(key: key);
@@ -27,6 +28,9 @@ class WidgetWrapper extends StatelessWidget {
         return WidgetButton();
       case WidgetElement.row:
         return WidgetRow();
+
+      case WidgetElement.infinityList:
+        return WidgetInfinityList();
       default:
         return Text('Coming soon...');
     }
