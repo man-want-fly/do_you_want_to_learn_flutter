@@ -1,5 +1,8 @@
+import 'dart:math';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class WidgetText extends StatelessWidget {
   @override
@@ -17,6 +20,7 @@ class _MainChildWidget extends StatefulWidget {
 class _MainChildState extends State<_MainChildWidget> {
   TextAlign _align = TextAlign.left;
   Color _color = Colors.black;
+  int _lines = 1;
 
   void _textAlignHasChanged(TextAlign align) {
     setState(() {
@@ -27,6 +31,12 @@ class _MainChildState extends State<_MainChildWidget> {
   void _textColorHasChanged(Color color) {
     setState(() {
       _color = color;
+    });
+  }
+
+  void _textNumberOfLinesHasChanged(int lines) {
+    setState(() {
+      _lines = lines;
     });
   }
 
@@ -45,7 +55,7 @@ class _MainChildState extends State<_MainChildWidget> {
               borderRadius: BorderRadius.all(Radius.circular(16))
             ),
             child: Text(
-              'this is text',
+              List<int>.generate(_lines, (index) => index).map((e) => 'This is Text').join(' 🤪 '),
               textAlign: _align, 
               style: TextStyle(color: _color)
             )
@@ -57,6 +67,7 @@ class _MainChildState extends State<_MainChildWidget> {
           child: _ToolsWidget(
             textAlignValueChanged: _textAlignHasChanged,
             textColorValueChanged: _textColorHasChanged,
+            textNumberOfLinesValueChanged: _textNumberOfLinesHasChanged
           )
         )
       ]
@@ -69,11 +80,13 @@ class _ToolsWidget extends StatefulWidget {
   _ToolsWidget({
     Key? key,
     required this.textAlignValueChanged,
-    required this.textColorValueChanged
+    required this.textColorValueChanged,
+    required this.textNumberOfLinesValueChanged
   }) : super(key: key);
 
   final ValueChanged<TextAlign> textAlignValueChanged;
   final ValueChanged<Color> textColorValueChanged;
+  final ValueChanged<int> textNumberOfLinesValueChanged;
 
   @override
   _ToolsState createState() => _ToolsState();
@@ -83,6 +96,8 @@ class _ToolsState extends State<_ToolsWidget> {
 
   TextAlign _currentTextAlign = TextAlign.left;
   TextColors _textColor = TextColors.black;
+  int _numberOfLines = 1;
+
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +134,27 @@ class _ToolsState extends State<_ToolsWidget> {
             _textColor = newValue!;
             widget.textColorValueChanged(newValue.color);
           }
-        )
+        ),
+        Row(children: [
+          Text('Lines:', style: TextStyle(fontSize: 11)),
+          Column(children: [
+            TextButton(
+              onPressed: () { 
+                _numberOfLines++; 
+                widget.textNumberOfLinesValueChanged(_numberOfLines);
+              }, 
+              child: Icon(Icons.add)
+            ),
+            TextButton(
+              onPressed: () {
+                _numberOfLines--;
+                _numberOfLines = max(_numberOfLines, 1);
+                widget.textNumberOfLinesValueChanged(_numberOfLines);
+              },
+              child: Icon(Icons.minimize)
+            )
+          ])
+        ])
       ]
     );
   }
