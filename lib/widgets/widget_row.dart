@@ -9,13 +9,14 @@ class WidgetRow extends StatefulWidget {
 }
 
 class _WidgetRowState extends State<WidgetRow> {
+  String _randomPair = '';
 
-  String randomPair = '';
-  String getRandomWordPair() => WordPair.random().asCamelCase;
-  void changeWordPair() => setState(()  => randomPair =  getRandomWordPair());
+  String _getRandomWordPair() => WordPair.random().asCamelCase;
+
+  void _changeWordPair() => setState(() => _randomPair = _getRandomWordPair());
 
   _WidgetRowState() {
-    randomPair = getRandomWordPair();
+    _randomPair = _getRandomWordPair();
   }
 
   @override
@@ -23,15 +24,23 @@ class _WidgetRowState extends State<WidgetRow> {
     return Container(
       child: Row(
         children: [
-          Container(child: Padding(
+          Container(
+              child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: FlutterLogo(),
           )),
-          Expanded(child: Text(randomPair)),
-          Container(child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextButton(child: Text('change pair'), onPressed: changeWordPair),
-          ),)
+          Expanded(
+              child: Text(
+            _randomPair,
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          )),
+          Container(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                  child: Text('change pair'), onPressed: _changeWordPair),
+            ),
+          )
         ],
       ),
     );
