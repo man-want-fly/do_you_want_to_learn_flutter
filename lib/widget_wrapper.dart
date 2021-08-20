@@ -1,3 +1,4 @@
+import 'package:do_you_want_to_learn_flutter/widgets/widget_image.dart';
 import 'package:flutter/material.dart';
 
 import 'widget_element.dart';
@@ -7,7 +8,8 @@ import 'widgets/widget_row.dart';
 import 'widgets/widget_infinity_list.dart';
 
 class WidgetWrapper extends StatelessWidget {
-  WidgetWrapper({Key? key, required this.title, required this.element}) : super(key: key);
+  WidgetWrapper({Key? key, required this.title, required this.element})
+      : super(key: key);
 
   final String title;
   final WidgetElement element;
@@ -15,9 +17,7 @@ class WidgetWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title)), 
-      body: _buildBody(element)
-    );
+        appBar: AppBar(title: Text(title)), body: _buildBody(element));
   }
 
   Widget _buildBody(WidgetElement element) {
@@ -26,9 +26,10 @@ class WidgetWrapper extends StatelessWidget {
         return WidgetText();
       case WidgetElement.button:
         return WidgetButton();
+      case WidgetElement.image:
+        return WidgetImage();
       case WidgetElement.row:
         return WidgetRow();
-
       case WidgetElement.infinityList:
         return WidgetInfinityList();
       default:
