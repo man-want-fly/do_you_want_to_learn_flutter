@@ -7,6 +7,7 @@ import 'widgets/widget_icon.dart';
 import 'widgets/widget_image.dart';
 import 'widgets/widget_row.dart';
 import 'widgets/widget_infinity_list.dart';
+import 'widgets/widget_textfield.dart';
 
 class WidgetWrapper extends StatelessWidget {
   WidgetWrapper({Key? key, required this.title, required this.element})
@@ -31,6 +32,8 @@ class WidgetWrapper extends StatelessWidget {
         return WidgetImage();
       case WidgetElement.icon:
         return WidgetIcon();
+      case WidgetElement.textField:
+        return WidgetTextField();
       case WidgetElement.row:
         return WidgetRow();
       case WidgetElement.infinityList:
