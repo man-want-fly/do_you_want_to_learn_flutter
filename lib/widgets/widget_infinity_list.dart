@@ -9,15 +9,24 @@ class WidgetInfinityList extends StatefulWidget {
 }
 
 class _WidgetInfinityListState extends State<WidgetInfinityList> {
-  //TODO create more row when scroll to bottom
+  final _widgetRows = <WidgetRow>[];
+
   @override
   Widget build(BuildContext context) {
     return Container(
         child: ListView.builder(
       padding: const EdgeInsets.all(16),
       itemBuilder: (BuildContext _context, int i) {
+        final index = i ~/ 2;
         if (i.isOdd) return Divider();
-        return WidgetRow();
+        // print('index: $index');
+        // print('length ${_widgetRows.length}');
+        if (index >= _widgetRows.length) {
+          print('add');
+          _widgetRows.add(WidgetRow());
+        }
+        // print(_widgetRows[index].toString());
+        return _widgetRows[index];
       },
     ));
   }

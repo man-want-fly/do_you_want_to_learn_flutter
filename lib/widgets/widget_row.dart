@@ -9,15 +9,26 @@ class WidgetRow extends StatefulWidget {
 }
 
 class _WidgetRowState extends State<WidgetRow> {
-  String _randomPair = '';
+  String randomPair = '';
 
   String _getRandomWordPair() => WordPair.random().asCamelCase;
 
-  void _changeWordPair() => setState(() => _randomPair = _getRandomWordPair());
+  void _changeWordPair() => setState(() => randomPair = _getRandomWordPair());
 
-  _WidgetRowState() {
-    _randomPair = _getRandomWordPair();
+
+  // _WidgetRowState() {
+  //   // randomPair = _getRandomWordPair();
+  // }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    print('create row!!!!');
+    super.initState();
+    randomPair=_getRandomWordPair();
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +42,7 @@ class _WidgetRowState extends State<WidgetRow> {
           )),
           Expanded(
               child: Text(
-            _randomPair,
+            randomPair,
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           )),
           Container(
