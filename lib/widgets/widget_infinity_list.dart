@@ -19,13 +19,9 @@ class _WidgetInfinityListState extends State<WidgetInfinityList> {
       itemBuilder: (BuildContext _context, int i) {
         final index = i ~/ 2;
         if (i.isOdd) return Divider();
-        // print('index: $index');
-        // print('length ${_widgetRows.length}');
         if (index >= _widgetRows.length) {
-          print('add');
           _widgetRows.add(WidgetRow());
         }
-        // print(_widgetRows[index].toString());
         return _widgetRows[index];
       },
     ));

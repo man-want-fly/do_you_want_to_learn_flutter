@@ -2,32 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
 class WidgetRow extends StatefulWidget {
-  const WidgetRow({Key? key}) : super(key: key);
+  String? name;
+
+  WidgetRow({Key? key, this.name}) : super(key: key);
 
   @override
   _WidgetRowState createState() => _WidgetRowState();
 }
 
 class _WidgetRowState extends State<WidgetRow> {
-  String randomPair = '';
+  String randomPair ='';
 
   String _getRandomWordPair() => WordPair.random().asCamelCase;
 
   void _changeWordPair() => setState(() => randomPair = _getRandomWordPair());
 
-
-  // _WidgetRowState() {
-  //   // randomPair = _getRandomWordPair();
-  // }
-
   @override
   void initState() {
-    // TODO: implement initState
-    print('create row!!!!');
     super.initState();
-    randomPair=_getRandomWordPair();
+    randomPair = _getRandomWordPair();
   }
-
 
 
   @override
