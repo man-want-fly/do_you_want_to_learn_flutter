@@ -1,3 +1,4 @@
+import 'package:do_you_want_to_learn_flutter/widgets/widget_form.dart';
 import 'package:flutter/material.dart';
 
 import 'widget_element.dart';
@@ -34,6 +35,8 @@ class WidgetWrapper extends StatelessWidget {
         return WidgetIcon();
       case WidgetElement.textField:
         return WidgetTextField();
+      case WidgetElement.form:
+        return WidgetForm();
       case WidgetElement.row:
         return WidgetRow();
       case WidgetElement.infinityList:
