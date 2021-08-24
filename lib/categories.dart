@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:do_you_want_to_learn_flutter/widget_more.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -65,9 +66,19 @@ class CategoriesPage extends StatelessWidget {
   }
 
   void _listItemTapped(Categories item, BuildContext context) {
-    Navigator.push(
-      context, 
-      MaterialPageRoute(builder: (_) => WidgetsPage())
-    );
+    switch (item) {
+      case Categories.widgets:
+        Navigator.push(
+          context, 
+          MaterialPageRoute(builder: (_) => WidgetsPage())
+        );
+        break;
+      default: 
+        Navigator.push(
+          context, 
+          MaterialPageRoute(builder: (_) => WidgetMorePage(title: item.title))
+        );
+        break;
+    }
   }
 }
