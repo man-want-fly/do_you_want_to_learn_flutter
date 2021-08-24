@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:do_you_want_to_learn_flutter/animation/animation_categories.dart';
 import 'package:do_you_want_to_learn_flutter/more.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -74,6 +75,13 @@ class CategoriesPage extends StatelessWidget {
           MaterialPageRoute(builder: (_) => WidgetsPage())
         );
         break;
+      case Categories.animation:
+        Navigator.push(
+          context, 
+          MaterialPageRoute(builder: (_) => AnimationCategoriesPage(title: item.title))
+        );
+        break;
+
       default: 
         Navigator.push(
           context, 
