@@ -1,6 +1,6 @@
-import 'package:do_you_want_to_learn_flutter/widgets.dart';
 import 'package:flutter/material.dart';
 
+import 'categories.dart';
 class HomePage extends StatefulWidget {
   HomePage({Key? key, required this.title}) : super(key: key);
 
@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Navigator.push(
                   context, 
-                  MaterialPageRoute(builder: (_) => WidgetsPage())
+                  MaterialPageRoute(builder: (_) => CategoriesPage())
                 );
               }, 
               child: Text('Yes')
