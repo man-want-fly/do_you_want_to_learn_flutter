@@ -19,6 +19,7 @@ class _WidgetFormState extends State<WidgetForm> {
       padding: const EdgeInsets.all(16), 
       child: Form(
         autovalidateMode: AutovalidateMode.onUserInteraction,
+        onWillPop: _onWillPop,
         child: Column(
           children: [
             TextFormField(
@@ -78,6 +79,28 @@ class _WidgetFormState extends State<WidgetForm> {
     _payeeController.dispose();
     _amountController.dispose();
     super.dispose();
+  }
+
+  Future<bool> _onWillPop() async {
+    return showDialog(
+      context: context, 
+      builder: (context) {
+        return AlertDialog(
+          title: Text('不转账啦？'), 
+          actions: [
+            ElevatedButton(
+              onPressed: () => Navigator.of(context).pop(true), 
+              child: Text('不转了')
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.of(context).pop(false), 
+              child: Text('再想想')
+            )
+          ]
+        );
+      }
+    )
+    .then((value) => value ?? false);
   }
 
   void _updateTransferButtonState() {
