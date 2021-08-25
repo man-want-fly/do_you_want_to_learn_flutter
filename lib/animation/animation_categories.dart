@@ -34,4 +34,13 @@ class AnimationCategoriesPage extends StatelessWidget {
       )
     );
   }
+
+  void _listItemOnTap(AnimationCategory item) {
+    switch (item) {
+      case AnimationCategory.implicity:
+        
+        break;
+      default:
+    }
+  }
 }

@@ -1,3 +1,5 @@
+import 'package:do_you_want_to_learn_flutter/animation/implicitly/implicitly_animated_align.dart';
+import 'package:do_you_want_to_learn_flutter/more.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -35,19 +37,30 @@ class ImplicitlyAnimationsWidget extends StatelessWidget {
             leading: Icon(Icons.twenty_one_mp),
             title: Text(item.title),
             trailing: Icon(Icons.arrow_forward_ios),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) { 
-                  return ImplcitilyTweenAnimationBuilder(title: item.title);
-                })
-              );
-            }
+            onTap: () => _listItemOnTap(context, item) 
           );
         }, 
         separatorBuilder: (_, idx) => Divider(), 
         itemCount: _items.length
       ),
+    );
+  }
+
+  void _listItemOnTap(BuildContext context, ImplicitAnimation item) {
+    Widget aWidget = MorePage(title: 'More');
+    switch (item) {
+      case ImplicitAnimation.tweenAnimationBuilder:
+        aWidget = ImplcitilyTweenAnimationBuilder(title: item.title);
+        break;
+      case ImplicitAnimation.align:
+        aWidget = ImplicitlyAnimatedAlign(title: item.title);
+        break;
+      default:
+        break;
+    }
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (_) => aWidget)
     );
   }
 }
