@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '/extensions/string_extension.dart';
+import 'implicitly/implicitly_animations.dart';
 
 enum AnimationCategory { implicity }
 
@@ -18,9 +19,14 @@ class AnimationCategoriesPage extends StatelessWidget {
       appBar: AppBar(title: Text(title)),
       body: ListView.separated(
         itemBuilder: (_, idx) {
+          String title = describeEnum(_categories[idx]).capitalize();
           return ListTile(
-            title: Text(describeEnum(_categories[idx]).capitalize()),
-            trailing: Icon(Icons.arrow_forward_ios)
+            title: Text(title),
+            trailing: Icon(Icons.arrow_forward_ios),
+            onTap: () => Navigator.push(
+              context, 
+              MaterialPageRoute(builder: (_) => ImplicitlyAnimationsWidget(title: title))
+            )
           );
         }, 
         separatorBuilder: (_, idx) => Divider(),
