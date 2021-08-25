@@ -1,4 +1,5 @@
 import 'package:do_you_want_to_learn_flutter/animation/implicitly/implicitly_animated_align.dart';
+import 'package:do_you_want_to_learn_flutter/animation/implicitly/implicitly_animated_container.dart';
 import 'package:do_you_want_to_learn_flutter/more.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -54,6 +55,9 @@ class ImplicitlyAnimationsWidget extends StatelessWidget {
         break;
       case ImplicitAnimation.align:
         aWidget = ImplicitlyAnimatedAlign(title: item.title);
+        break;
+      case ImplicitAnimation.container:
+        aWidget = ImplicitlyAnimatedContainer(title: item.title);
         break;
       default:
         break;
