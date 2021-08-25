@@ -2,9 +2,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '/extensions/string_extension.dart';
+import 'hero/hero_animation_home.dart';
 import 'implicitly/implicitly_animations.dart';
 
-enum AnimationCategory { implicity }
+enum AnimationCategory { implicity, hero }
 
 class AnimationCategoriesPage extends StatelessWidget {
   AnimationCategoriesPage({ Key? key, required this.title }) : super(key: key);
@@ -19,14 +20,12 @@ class AnimationCategoriesPage extends StatelessWidget {
       appBar: AppBar(title: Text(title)),
       body: ListView.separated(
         itemBuilder: (_, idx) {
-          String title = describeEnum(_categories[idx]).capitalize();
+          final item = _categories[idx];
+          String title = describeEnum(item).capitalize();
           return ListTile(
             title: Text(title),
             trailing: Icon(Icons.arrow_forward_ios),
-            onTap: () => Navigator.push(
-              context, 
-              MaterialPageRoute(builder: (_) => ImplicitlyAnimationsWidget(title: title))
-            )
+            onTap: () => _listItemOnTap(context, item)
           );
         }, 
         separatorBuilder: (_, idx) => Divider(),
@@ -35,12 +34,20 @@ class AnimationCategoriesPage extends StatelessWidget {
     );
   }
 
-  void _listItemOnTap(AnimationCategory item) {
+  void _listItemOnTap(BuildContext context, AnimationCategory item) {
     switch (item) {
       case AnimationCategory.implicity:
-        
+        Navigator.push(
+          context, 
+          MaterialPageRoute(builder: (_) => ImplicitlyAnimationsWidget(title: title))
+        );
         break;
-      default:
+      case AnimationCategory.hero:
+        Navigator.push(
+          context, 
+          MaterialPageRoute(builder: (_) => HeroAnimationHome())
+        );
+        break;
     }
   }
 }
