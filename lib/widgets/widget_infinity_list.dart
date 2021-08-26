@@ -20,7 +20,7 @@ class _WidgetInfinityListState extends State<WidgetInfinityList> {
         final index = i ~/ 2;
         if (i.isOdd) return Divider();
         if (index >= _widgetRows.length) {
-          _widgetRows.add(WidgetRow());
+          _widgetRows.add(WidgetRow(key:Key(index.toString())));
         }
         return _widgetRows[index];
       },
