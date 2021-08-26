@@ -43,7 +43,12 @@ class _WidgetCheckboxState extends State<WidgetCheckbox> {
           child: Row(
             children: _lightStates.keys.map((name) => _BulbCard(
               isOn: _lightStates[name]!, 
-              room: name
+              room: name,
+              lightStateChanged: (newValue) {
+                setState(() {
+                  _lightStates[name] = newValue;
+                });
+              },
             )).toList()
           )
         )
@@ -53,10 +58,11 @@ class _WidgetCheckboxState extends State<WidgetCheckbox> {
 }
 
 class _BulbCard extends StatelessWidget {
-  const _BulbCard({required this.isOn, required this.room});
+  const _BulbCard({required this.isOn, required this.room, required this.lightStateChanged});
 
   final bool isOn;
   final String room;
+  final ValueChanged<bool> lightStateChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -80,10 +86,15 @@ class _BulbCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            Icons.lightbulb, 
-            size: 100, 
-            color: isOn ? Colors.yellow : Colors.grey
+          IconButton(
+            onPressed: () {
+              lightStateChanged(!isOn);
+            }, 
+            iconSize: 100,
+            icon: Icon(
+              Icons.lightbulb, 
+              color: isOn ? Colors.yellow : Colors.grey
+            )
           ),
           Text(
             room, 
