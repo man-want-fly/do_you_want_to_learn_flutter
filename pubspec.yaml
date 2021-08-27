@@ -48,6 +48,39 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/watermelon.png
+  #
+    - lib/animation/staggered/images/pic1.jpg
+    - lib/animation/staggered/images/pic2.jpg
+    - lib/animation/staggered/images/pic3.jpg
+    - lib/animation/staggered/images/pic3.jpg
+    - lib/animation/staggered/images/pic3.jpg
+    - lib/animation/staggered/images/pic4.jpg
+    - lib/animation/staggered/images/pic5.jpg
+    - lib/animation/staggered/images/pic6.jpg
+    - lib/animation/staggered/images/pic7.jpg
+    - lib/animation/staggered/images/pic8.jpg
+    - lib/animation/staggered/images/pic9.jpg
+    - lib/animation/staggered/images/pic10.jpg
+    - lib/animation/staggered/images/pic11.jpg
+    - lib/animation/staggered/images/pic12.jpg
+    - lib/animation/staggered/images/pic13.jpg
+    - lib/animation/staggered/images/pic14.jpg
+    - lib/animation/staggered/images/pic15.jpg
+    - lib/animation/staggered/images/pic16.jpg
+    - lib/animation/staggered/images/pic17.jpg
+    - lib/animation/staggered/images/pic18.jpg
+    - lib/animation/staggered/images/pic19.jpg
+    - lib/animation/staggered/images/pic20.jpg
+    - lib/animation/staggered/images/pic21.jpg
+    - lib/animation/staggered/images/pic22.jpg
+    - lib/animation/staggered/images/pic23.jpg
+    - lib/animation/staggered/images/pic24.jpg
+    - lib/animation/staggered/images/pic25.jpg
+    - lib/animation/staggered/images/pic26.jpg
+    - lib/animation/staggered/images/pic27.jpg
+    - lib/animation/staggered/images/pic28.jpg
+    - lib/animation/staggered/images/pic29.jpg
+    - lib/animation/staggered/images/pic30.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
