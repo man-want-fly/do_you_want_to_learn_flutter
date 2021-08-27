@@ -12,6 +12,7 @@ import 'widgets/widget_image.dart';
 import 'widgets/widget_row.dart';
 import 'widgets/widget_infinity_list.dart';
 import 'widgets/widget_textfield.dart';
+import 'widgets/widget_todo.dart';
 
 class WidgetWrapper extends StatelessWidget {
   WidgetWrapper({Key? key, required this.title, required this.element})
@@ -50,6 +51,8 @@ class WidgetWrapper extends StatelessWidget {
         return WidgetRow();
       case WidgetElement.infinityList:
         return WidgetInfinityList();
+      case WidgetElement.todoList:
+        return TodoList();
       default:
         return Text('Coming soon...');
     }

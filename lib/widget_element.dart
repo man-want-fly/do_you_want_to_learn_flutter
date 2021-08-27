@@ -3,5 +3,5 @@ enum WidgetElement {
   text, button, image, icon, 
   textField, form, textFormField, 
   theSwitch, checkbox, radio, 
-  container, padding, align, row, column, infinityList
+  container, padding, align, row, column, infinityList, todoList
 }
