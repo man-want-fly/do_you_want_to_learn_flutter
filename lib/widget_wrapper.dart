@@ -1,5 +1,6 @@
 import 'package:do_you_want_to_learn_flutter/widgets/widget_checkbox.dart';
 import 'package:do_you_want_to_learn_flutter/widgets/widget_form.dart';
+import 'package:do_you_want_to_learn_flutter/widgets/widget_radio.dart';
 import 'package:do_you_want_to_learn_flutter/widgets/widget_switch.dart';
 import 'package:flutter/material.dart';
 
@@ -43,6 +44,8 @@ class WidgetWrapper extends StatelessWidget {
         return WidgetSwitch();
       case WidgetElement.checkbox:
         return WidgetCheckbox();
+      case WidgetElement.radio:
+        return WidgetRadio();
       case WidgetElement.row:
         return WidgetRow();
       case WidgetElement.infinityList:
