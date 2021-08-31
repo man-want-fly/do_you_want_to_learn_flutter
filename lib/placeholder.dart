@@ -1,16 +1,13 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-class MorePage extends StatefulWidget {
-  MorePage({Key? key, this.title = 'More'}) : super(key: key);
-
-  final String title;
+class PlaceholderWidget extends StatefulWidget {
 
   @override
-  State<StatefulWidget> createState() => _MoreState();
+  State<StatefulWidget> createState() => _PlaceholderState();
 }
 
-class _MoreState extends State<MorePage>
+class _PlaceholderState extends State<PlaceholderWidget>
     with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
@@ -52,7 +49,7 @@ class _MoreState extends State<MorePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
+      appBar: AppBar(title: Text('Depend on you 👊')),
       body: Padding(
         padding: EdgeInsets.all(32),
         child: Center(

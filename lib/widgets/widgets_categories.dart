@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import '/more.dart';
+import '../placeholder.dart';
 import '/widgets/basic/basic_widgets.dart';
 import '/extensions/string_extension.dart';
 
@@ -40,7 +40,7 @@ class WidgetsCategories extends StatelessWidget {
       default:
         Navigator.push(
           context, 
-          MaterialPageRoute(builder: (_) => MorePage())
+          MaterialPageRoute(builder: (_) => PlaceholderWidget())
         );
         break;
     }

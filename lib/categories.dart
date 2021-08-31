@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'extensions/string_extension.dart';
 import '/animation/animation_categories.dart';
-import 'more.dart';
+import 'placeholder.dart';
 import 'widgets/widgets_categories.dart';
 
 enum Categories {
@@ -85,7 +85,7 @@ class CategoriesPage extends StatelessWidget {
       default: 
         Navigator.push(
           context, 
-          MaterialPageRoute(builder: (_) => MorePage(title: item.title))
+          MaterialPageRoute(builder: (_) => PlaceholderWidget())
         );
         break;
     }
