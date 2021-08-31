@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../placeholder.dart';
 import '/widgets/basic/basic_widgets.dart';
 import '/extensions/string_extension.dart';
+import 'layout/single_child_layout_widgets.dart';
 
 class WidgetsCategories extends StatelessWidget {
   const WidgetsCategories({Key? key, required this.title}) : super(key: key);
@@ -37,6 +38,14 @@ class WidgetsCategories extends StatelessWidget {
           MaterialPageRoute(builder: (_) => BasicWidgetsPage(title: item.title))
         );
         break;
+
+      case _WidgetsCategoriesElement.layout:
+        Navigator.push(
+          context, 
+          MaterialPageRoute(builder: (_) => SingleLayoutWidgets())
+        );
+        break;
+
       default:
         Navigator.push(
           context, 
