@@ -1,4 +1,5 @@
 
+import 'package:do_you_want_to_learn_flutter/widgets/basic/elements/widget_paint.dart';
 import 'package:flutter/material.dart';
 
 import 'basic_widget_element.dart';
@@ -54,6 +55,8 @@ class WidgetWrapper extends StatelessWidget {
         return WidgetInfinityList();
       case BasicWidgetElement.todoList:
         return TodoList();
+      case BasicWidgetElement.Paint:
+        return WidgetPaint();
       default:
         return Text('Coming soon...');
     }

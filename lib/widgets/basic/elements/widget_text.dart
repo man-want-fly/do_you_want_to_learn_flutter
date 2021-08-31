@@ -46,7 +46,6 @@ class _MainChildState extends State<_MainChildWidget> {
       crossAxisAlignment: CrossAxisAlignment.start, 
       children: [
         Expanded(
-          flex: 3,
           child: Container(
             padding: EdgeInsets.all(16),
             constraints: BoxConstraints(minHeight: double.infinity),
@@ -62,8 +61,7 @@ class _MainChildState extends State<_MainChildWidget> {
           )
         ),
         SizedBox(width: 16),
-        Expanded(
-          flex: 1,
+        Container(
           child: _ToolsWidget(
             textAlignValueChanged: _textAlignHasChanged,
             textColorValueChanged: _textColorHasChanged,
