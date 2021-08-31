@@ -13,10 +13,10 @@ class _WidgetPaintState extends State<WidgetPaint> {
 
   void _addDragPoints(Offset globalPosition) {
     RenderBox? renderBox = context.findRenderObject() as RenderBox;
-    Offset? point = renderBox?.globalToLocal(globalPosition);
+    Offset? point = renderBox.globalToLocal(globalPosition);
     if (point != null) {
       setState(() {
-        _points = List.from(_points)..add(point!);
+        _points = List.from(_points)..add(point);
       });
     }
 
