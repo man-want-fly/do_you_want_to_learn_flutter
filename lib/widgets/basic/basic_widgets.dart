@@ -6,13 +6,15 @@ import 'basic_widget_element.dart';
 import 'basic_widget_wrapper.dart';
 
 class BasicWidgetsPage extends StatelessWidget {
+  const BasicWidgetsPage({ Key? key, required this.title }) : super(key: key);
 
-  final List<BasicWidgetElement> _elements = BasicWidgetElement.values;
+  final String title;
+  final _elements = BasicWidgetElement.values;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Widgets')),
+      appBar: AppBar(title: Text(title)),
       body: ListView.separated(
         itemBuilder: (context, index) {
           BasicWidgetElement element = _elements[index];

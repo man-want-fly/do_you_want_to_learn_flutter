@@ -2,7 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class MorePage extends StatefulWidget {
-  MorePage({Key? key, required this.title}) : super(key: key);
+  MorePage({Key? key, this.title = 'More'}) : super(key: key);
 
   final String title;
 
@@ -35,7 +35,6 @@ class _MoreState extends State<MorePage>
     _animation.addStatusListener((status) {
       debugPrint(status.toString());
       setState(() {
-        // FIXME: animate color
         _color = Colors.primaries[Random().nextInt(Colors.primaries.length)];
       });
     });
