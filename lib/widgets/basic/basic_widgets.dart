@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'extensions/string_extension.dart';
-import 'widget_element.dart';
-import 'widget_wrapper.dart';
+import '/extensions/string_extension.dart';
+import 'basic_widget_element.dart';
+import 'basic_widget_wrapper.dart';
 
-class WidgetsPage extends StatelessWidget {
+class BasicWidgetsPage extends StatelessWidget {
 
-  final List<WidgetElement> _elements = WidgetElement.values;
+  final List<BasicWidgetElement> _elements = BasicWidgetElement.values;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class WidgetsPage extends StatelessWidget {
       appBar: AppBar(title: Text('Widgets')),
       body: ListView.separated(
         itemBuilder: (context, index) {
-          WidgetElement element = _elements[index];
+          BasicWidgetElement element = _elements[index];
           String title = describeEnum(element).toString().capitalize();
           return ListTile(
             title: Text(title),

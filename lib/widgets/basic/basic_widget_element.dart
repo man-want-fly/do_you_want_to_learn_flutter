@@ -1,5 +1,5 @@
 
-enum WidgetElement {
+enum BasicWidgetElement {
   text, button, image, icon, 
   textField, form, textFormField, 
   theSwitch, checkbox, radio, 

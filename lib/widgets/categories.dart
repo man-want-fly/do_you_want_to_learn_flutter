@@ -1,11 +1,11 @@
 import 'dart:math';
-import 'package:do_you_want_to_learn_flutter/animation/animation_categories.dart';
-import 'package:do_you_want_to_learn_flutter/more.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets.dart';
-import 'extensions/string_extension.dart';
+import '/widgets/basic/basic_widgets.dart';
+import '../extensions/string_extension.dart';
+import '/animation/animation_categories.dart';
+import '../more.dart';
 
 enum Categories {
   widgets, animation, file, network, more // and so on
@@ -72,7 +72,7 @@ class CategoriesPage extends StatelessWidget {
       case Categories.widgets:
         Navigator.push(
           context, 
-          MaterialPageRoute(builder: (_) => WidgetsPage())
+          MaterialPageRoute(builder: (_) => BasicWidgetsPage())
         );
         break;
       case Categories.animation:
