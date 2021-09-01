@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'elements/widget_transform_3d.dart';
 import '/extensions/string_extension.dart';
-
+import 'elements/widget_transform_countdown.dart';
 
 class SingleLayoutWidgets extends StatelessWidget {
   const SingleLayoutWidgets({Key? key}) : super(key: key);
@@ -36,13 +36,19 @@ class SingleLayoutWidgets extends StatelessWidget {
           MaterialPageRoute(builder: (_) => WidgetTransform3D(title: element.title))
         );
         break;
+      case _SingleChildLayoutWidgetsElement.flipCard:
+        Navigator.push(
+          context, 
+          MaterialPageRoute(builder: (_) => WidgetTransfromCountdown())
+        );
+        break;
       default:
         break;
     }
   }
 }
 
-enum _SingleChildLayoutWidgetsElement { transform3d }
+enum _SingleChildLayoutWidgetsElement { transform3d, flipCard }
 
 extension _SingleChildLayoutWidgetsElementExtension on _SingleChildLayoutWidgetsElement {
   String get title {
