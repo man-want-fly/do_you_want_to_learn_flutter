@@ -1,4 +1,6 @@
 
+import 'package:do_you_want_to_learn_flutter/widgets/basic/elements/widget_animated_list.dart';
+import 'package:do_you_want_to_learn_flutter/widgets/basic/elements/widget_ink.dart';
 import 'package:do_you_want_to_learn_flutter/widgets/basic/elements/widget_paint.dart';
 import 'package:flutter/material.dart';
 
@@ -55,8 +57,12 @@ class WidgetWrapper extends StatelessWidget {
         return WidgetInfinityList();
       case BasicWidgetElement.todoList:
         return TodoList();
-      case BasicWidgetElement.Paint:
+      case BasicWidgetElement.paint:
         return WidgetPaint();
+      case BasicWidgetElement.ink:
+        return WidgetInk();
+      case BasicWidgetElement.animatedList:
+        return WidgetAnimatedList();
       default:
         return Text('Coming soon...');
     }

@@ -4,5 +4,5 @@ enum BasicWidgetElement {
   textField, form, textFormField, 
   theSwitch, checkbox, radio, 
   container, padding, align, row, column, infinityList, todoList,
-  Paint
+  paint, ink, animatedList
 }
