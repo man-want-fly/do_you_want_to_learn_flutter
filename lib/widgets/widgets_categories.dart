@@ -5,6 +5,7 @@ import '../placeholder.dart';
 import '/widgets/basic/basic_widgets.dart';
 import '/extensions/string_extension.dart';
 import 'layout/single_child_layout_widgets.dart';
+import 'scrolling/widgets_scrolling.dart';
 
 class WidgetsCategories extends StatelessWidget {
   const WidgetsCategories({Key? key, required this.title}) : super(key: key);
@@ -20,7 +21,8 @@ class WidgetsCategories extends StatelessWidget {
         itemBuilder: (_, index) {
           final ele = _elements[index];
           return ListTile(
-            title: Text(ele.title), 
+            title: Text(ele.title),
+            trailing: Icon(Icons.arrow_forward_ios_rounded), 
             onTap: () => _onTapListItem(context, ele)
           );
         },
@@ -43,6 +45,13 @@ class WidgetsCategories extends StatelessWidget {
         Navigator.push(
           context, 
           MaterialPageRoute(builder: (_) => SingleLayoutWidgets())
+        );
+        break;
+      
+      case _WidgetsCategoriesElement.scrolling:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => WidgetsScrolling(title: item.title))
         );
         break;
 
