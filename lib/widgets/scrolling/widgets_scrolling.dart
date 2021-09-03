@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '/extensions/string_extension.dart';
 import 'widget_draggable_scrollable_sheet.dart';
+import 'widget_grid.dart';
 
 class WidgetsScrolling extends StatelessWidget {
   const WidgetsScrolling({ Key? key, required this.title }) : super(key: key);
@@ -20,8 +21,8 @@ class WidgetsScrolling extends StatelessWidget {
           title: Text(_elements[i].title),
           trailing: Icon(Icons.arrow_forward_ios_rounded),
           onTap: () => _onTapListItem(context, _elements[i])
-        ), 
-        separatorBuilder: (_, x) => Divider(), 
+        ),
+        separatorBuilder: (_, x) => Divider(),
         itemCount: _elements.length
       ),
     );
@@ -35,7 +36,14 @@ class WidgetsScrolling extends StatelessWidget {
           MaterialPageRoute(builder: (_) => WidgetDraggableScrollableSheet(title: element.title))
         );
         break;
-        
+
+      case _WidgetsScrollingElement.gridView:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => WidgetGridView(title: element.title))
+        );
+        break;
+
       default:
         break;
     }
