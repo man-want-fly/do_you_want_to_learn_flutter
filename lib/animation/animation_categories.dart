@@ -2,12 +2,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '/extensions/string_extension.dart';
-import 'hero/hero_animation_home.dart';
+import 'hero/hero_animation_simple.dart';
+import 'hero/hero_animation_complex.dart';
 import 'implicitly/implicitly_animations.dart';
 import 'staggered/staggered_animation_complex.dart';
 import 'staggered/staggered_animation_sample.dart';
 
-enum AnimationCategory { implicity, hero, staggeredSample, staggeredComplex }
+enum AnimationCategory { implicity, heroSimple, heroComplex, staggeredSample, staggeredComplex }
 
 class AnimationCategoriesPage extends StatelessWidget {
   AnimationCategoriesPage({ Key? key, required this.title }) : super(key: key);
@@ -44,10 +45,16 @@ class AnimationCategoriesPage extends StatelessWidget {
           MaterialPageRoute(builder: (_) => ImplicitlyAnimationsWidget(title: title))
         );
         break;
-      case AnimationCategory.hero:
+      case AnimationCategory.heroSimple:
         Navigator.push(
           context, 
-          MaterialPageRoute(builder: (_) => HeroAnimationHome())
+          MaterialPageRoute(builder: (_) => HeroAnimationSimple())
+        );
+        break;
+      case AnimationCategory.heroComplex:
+        Navigator.push(
+          context, 
+          MaterialPageRoute(builder: (_) => HeroAnimationComplex())
         );
         break;
       case AnimationCategory.staggeredSample:
