@@ -30,18 +30,24 @@ class _WidgetGridViewState extends State<WidgetGridView> {
               if (i == _data.length - 1 && _data.length < 50) {
                 _fetchData();
               }
-              // TODO: grid view item click
-              return Container(
-                color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
-                child: Center(
-                  child: Text(
-                    '$i',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold
+              return InkResponse(
+                child: GridTile(
+                  child: Container(
+                    color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
+                    child: Center(
+                      child: Text(
+                        '$i',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                        )
+                      )
                     )
                   )
-                )
+                ),
+                onTap: () {
+                  print('tapped on item: $i');
+                },
               );
             },
             itemCount: _data.length
