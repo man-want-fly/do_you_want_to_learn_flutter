@@ -1,10 +1,12 @@
 import 'package:do_you_want_to_learn_flutter/animation/implicitly/implicitly_animated_align.dart';
 import 'package:do_you_want_to_learn_flutter/animation/implicitly/implicitly_animated_container.dart';
+import 'package:do_you_want_to_learn_flutter/animation/implicitly/implicitly_animated_cross_fade.dart';
 import 'package:do_you_want_to_learn_flutter/placeholder.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '/extensions/string_extension.dart';
+import 'implicitly_animated_default_text_style.dart';
 import 'implicitly_tween_animation_builder.dart';
 
 enum ImplicitAnimation {
@@ -12,7 +14,8 @@ enum ImplicitAnimation {
   align,
   container,
   defaultTextStyle,
-  opacity
+  opacity,
+  animatedCrossFade
 }
 
 extension _ImplicitAnimationExtension on ImplicitAnimation {
@@ -58,6 +61,12 @@ class ImplicitlyAnimationsWidget extends StatelessWidget {
         break;
       case ImplicitAnimation.container:
         aWidget = ImplicitlyAnimatedContainer(title: item.title);
+        break;
+      case ImplicitAnimation.defaultTextStyle:
+        aWidget = ImplicitlyAnimatedDefaultTextStyle(title: item.title);
+        break;
+      case ImplicitAnimation.animatedCrossFade:
+        aWidget = ImplicitlyAnimatedCrossFade(title: item.title);
         break;
       default:
         break;

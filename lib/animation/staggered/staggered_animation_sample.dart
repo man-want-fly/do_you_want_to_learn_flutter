@@ -29,7 +29,7 @@ class _StaggeredAnimationSimpleState extends State<StaggeredAnimationSimpleWidge
 
   @override
   Widget build(BuildContext context) {
-    timeDilation = 10;
+    timeDilation = 2;
     return Scaffold(
       appBar: AppBar(title: Text(widget.title)),
       body: GestureDetector(
