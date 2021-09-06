@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '/extensions/string_extension.dart';
 import 'widget_draggable_scrollable_sheet.dart';
 import 'widget_grid.dart';
+import 'widget_nested_scroll_view.dart';
 
 class WidgetsScrolling extends StatelessWidget {
   const WidgetsScrolling({ Key? key, required this.title }) : super(key: key);
@@ -44,7 +45,11 @@ class WidgetsScrolling extends StatelessWidget {
         );
         break;
 
-      default:
+      case _WidgetsScrollingElement.nestedScrollView:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => WidgetNestedScrollView())
+        );
         break;
     }
   }
