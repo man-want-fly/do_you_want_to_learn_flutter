@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 
-class BasicNetworking extends StatefulWidget {
-  const BasicNetworking({Key? key, required this.title}) : super(key: key);
+class BasicNetworking1 extends StatefulWidget {
+  const BasicNetworking1({Key? key, required this.title}) : super(key: key);
 
   final String title;
   @override
-  createState() => _BasicNetworkState();
+  createState() => _BasicNetwork1State();
 }
 
-class _BasicNetworkState extends State<BasicNetworking> {
+class _BasicNetwork1State extends State<BasicNetworking1> {
 
   late Future<List<_Post>> _posts;
 
