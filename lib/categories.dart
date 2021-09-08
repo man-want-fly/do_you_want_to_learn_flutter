@@ -6,7 +6,7 @@ import 'extensions/string_extension.dart';
 import '/animation/animation_categories.dart';
 import 'placeholder.dart';
 import 'widgets/widgets_categories.dart';
-import 'networking/basic_networking_1.dart';
+import 'networking/networking_container.dart';
 import 'networking/basic_networking_2.dart';
 
 enum Categories {
@@ -87,7 +87,7 @@ class CategoriesPage extends StatelessWidget {
       case Categories.network:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (_) => BasicNetworking2(title: item.title))
+          MaterialPageRoute(builder: (_) => NetworkingContainer(title: item.title))
         );
         break;
 
